@@ -42,6 +42,14 @@ def tic_tac_toe():
             continue
         if board[row][col] == " ":
             board[row][col] = player
+            if check_winner(board):
+                print_board(board)
+                print("Player " + player + " wins!")
+                break
+            if is_full(board):
+                print_board(board)
+                print("It's a draw!")
+                break
             if player == "X":
                 player = "O"
             else:
@@ -49,7 +57,5 @@ def tic_tac_toe():
         else:
             print("That spot is already taken! Try again.")
 
-    print_board(board)
-    print("Player " + player + " wins!")
 
 tic_tac_toe()
