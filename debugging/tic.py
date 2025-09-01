@@ -20,6 +20,12 @@ def check_winner(board):
 
     return False
 
+def is_full(board):
+    for row in board:
+        if " " in row:
+            return False
+    return True
+
 def tic_tac_toe():
     board = [[" "]*3 for _ in range(3)]
     player = "X"
